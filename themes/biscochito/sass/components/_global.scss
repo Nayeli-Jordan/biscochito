@@ -4,7 +4,9 @@ html {
  box-sizing: border-box;
 }
 *, *:before, *:after {
- box-sizing: inherit;
+  box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; //Fuente definida
 }
 
 body {
@@ -13,8 +15,20 @@ body {
   // flex-direction: column;
 }
 
-main {
-  // flex: 1 0 auto;
+.main-body {
+  min-height: -moz-calc(100vh - 40px);
+  min-height: -o-calc(100vh - 40px);
+  min-height: -webkit-calc(100vh - 40px);
+  min-height: calc(100vh - 40px);
+  position: relative;
+  overflow-x: hidden;
+  & section:first-child {
+    margin-top: 50px;//Header fixed    
+  }
+}
+
+.tooltipped {
+  cursor: pointer;
 }
 
 button,
@@ -402,6 +416,22 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 
+  thead {
+    tr {
+      background-color: $primary-color-dark;
+      color: $light-color;
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-child(even) {
+        background-color: $primary-color;
+        color: $light-color;
+      }      
+    }
+  }
+
   &.striped {
     tr {
       border-bottom: none;
@@ -433,15 +463,15 @@ table {
 }
 
 tr {
-  border-bottom: 1px solid $table-border-color;
+  border-bottom: 1px solid $primary-color;
 }
 
 td, th{
-  padding: 15px 5px;
+  padding: 5px 5px;
   display: table-cell;
-  text-align: left;
+  text-align: center;
   vertical-align: middle;
-  border-radius: 2px;
+  border-radius: 0px;
 }
 
 // Responsive Table

@@ -41,7 +41,7 @@
 		<meta http-equiv="cleartype" content="on">
 
 		<!-- Google font(s) -->
-		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Kalam:400|Open+Sans:400" rel="stylesheet">
 
 		<!--Import Google Icon Font-->
 		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -60,7 +60,33 @@
 		<?php wp_head(); ?>
 	</head>
 	<body>
-		<header class="js-header">
+		<header class="js-header">			
+			<nav>
+				<div class="nav-wrapper [ container ]">
+					<a href="<?php echo SITEURL ?>" class="brand-logo">
+						<span class="">Biscochito</span>
+						<!-- <img class="responsive-img logo-initial" src="<?php echo THEMEPATH ?>images/identidad/logo-gris-scale.png" alt="logo del sitio">
+						<img class="responsive-img logo-scroll hide" src="<?php echo THEMEPATH ?>images/identidad/logo-fondo.png" alt="logo del sitio"> -->
+					</a>
+					<a href="#" data-activates="menu-main-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+					<ul id="menu-main-menu">
+						<?php
+							$menu_name = 'top_menu';
 
+							if (( $locations = get_nav_menu_locations()) && isset( $locations[ $menu_name ])) {
+								$menu = wp_get_nav_menu_object( $locations[ $menu_name ]);
+								$menu_items = wp_get_nav_menu_items( $menu->term_id );
+								$menu_list = '';
+								foreach ( (array) $menu_items as $key => $menu_item) {
+									$title 		= $menu_item->title;
+									$url 		= $menu_item->url;
+									$menu_list .='<li><a href="' . $url . '" class="">' . $title . '</a></li>';
+								}
+							}
+							echo $menu_list;
+						?>						
+					</ul>
+				</div>
+			</nav>
 		</header>
 		<div class="[ main-body ]">

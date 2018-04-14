@@ -11,10 +11,9 @@ define( 'SITEURL', get_site_url() . '/' );
 /*------------------------------------*\
 	#SNIPPETS
 \*------------------------------------*/
-//require_once( 'inc/pages.php' );
 // require_once( 'inc/pages.php' );
-// require_once( 'inc/post-types.php' );
-// require_once( 'inc/taxonomies.php' );
+require_once( 'inc/post-types.php' );
+require_once( 'inc/taxonomies.php' );
 
 /*------------------------------------*\
 	#GENERAL FUNCTIONS
@@ -105,7 +104,7 @@ if(!is_admin()) {
 }
 
 /**
- * Custom walker class.
+ * Custom menú.
  */
 class WPDocs_Walker_Nav_Menu extends Walker_Nav_Menu {
  
@@ -184,4 +183,3 @@ class WPDocs_Walker_Nav_Menu extends Walker_Nav_Menu {
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
     }
 }
-

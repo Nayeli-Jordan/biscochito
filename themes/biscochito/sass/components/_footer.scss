@@ -1,0 +1,15 @@
+footer {
+	width: 100%;
+    position: absolute !important;
+    bottom: 0;
+    text-align: center;
+    padding: 10px 0;
+    color: #fff;
+    background-color: $primary-color;
+    a {
+    	color: $light-color;
+    	&:hover {
+    		text-decoration: underline;
+    	}
+    }
+}

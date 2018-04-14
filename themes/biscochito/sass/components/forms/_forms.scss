@@ -20,3 +20,62 @@ label {
 @import 'select';
 @import 'file-input';
 @import 'range';
+
+
+div.wpcf7 {
+	label {
+		color: $light-color!important;
+	}
+	input:not([type="submit"]){
+		color: $light-color!important;
+		border-bottom-color: $light-color;
+		height: 30px;
+		font-size: 12px;
+		&:focus {
+			border-bottom: 1px solid $primary-color-dark!important;
+			box-shadow: 0 1px 0 0 $primary-color-dark!important;
+		}
+	}
+	textarea {
+		outline: none;
+		color: $light-color!important;
+		border-top: none!important;
+		border-right: none!important;
+		border-left: none!important;
+		border-bottom-color: $light-color;
+		&:focus { border-bottom: 2px solid $primary-color-dark!important; }
+	}
+	input[type="submit"] {
+	    border-radius: 20px;
+	    background-color: $light-color;
+	    color: $primary-color;
+	    border: 0px;
+	    height: 36px;
+	    line-height: 36px;
+	    padding: 0 20px;
+	    margin-top: 10px;
+	    &:hover {
+	    	background-color: $primary-color-light;
+	    }
+	}
+	.ajax-loader {
+		position: absolute;
+		right: 100px;
+    	bottom: 0px;
+    	background-size: contain;
+    	width: 36px!important; height: 36px!important;
+	}
+
+	//Error
+	span.wpcf7-not-valid-tip {
+	    color: $primary-color-dark;
+	    background-color: $light-color;
+	    padding: 0px 5px;
+	    margin-bottom: 10px;
+	}
+	div.wpcf7-response-output {
+		border: 0px;
+		color: $primary-color-dark;
+	    background-color: $light-color;
+	}
+}

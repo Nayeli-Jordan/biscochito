@@ -1,0 +1,27 @@
+header {
+	min-height: 40px; //to do modificar por altura final igual en main-body
+	position: fixed;
+	width: 100%;
+	z-index: 10;
+	& nav{
+		.brand-logo {
+			padding: 3px 0;
+			max-height: 50px;
+			img {
+				max-height: 44px;
+			}
+		}
+		#menu-main-menu {
+			margin-right: -10px;
+			float: right !important;
+			@media #{$medium-and-up}{
+				transform: translateX(0%)!important;
+			}
+		}
+		.button-collapse {
+			@media #{$medium-and-up}{
+				display: none;
+			}
+		}
+	}
+}

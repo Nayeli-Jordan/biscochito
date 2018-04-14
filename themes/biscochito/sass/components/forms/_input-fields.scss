@@ -172,8 +172,6 @@ textarea.materialize-textarea {
   }
 
   position: relative;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
 
   & > label {
     color: $input-border-color;
@@ -349,4 +347,10 @@ textarea {
 /* Character Counter */
 .character-counter {
   min-height: 18px;
+}
+
+
+input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+    -webkit-appearance: none;
 }

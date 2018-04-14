@@ -1,0 +1,173 @@
+//colors
+.color-primary-light 			{ color: $primary-color-light; }
+.color-primary 					{ color: $primary-color!important; }
+.color-primary-dark 			{ color: $primary-color-dark!important; }
+.color-light					{ color: #fff; }
+
+// bg
+.bg-primary 			{ background-color: $primary-color; }
+.bg-primary-light		{ background-color: $primary-color-light; }
+.bg-primary-opacity 	{ background-color: rgba(238,80,82,0.8);}
+.bg-degrade{ 
+	background: linear-gradient(to bottom, rgba(255,255,255,0.6) , rgba(255,179,186,0.6));
+	text-align: center;
+	padding-top: 30px; padding-bottom: 30px;
+	padding-left: 30px; padding-right: 30px;
+	&.bg-degrade-large {
+		padding-top: 50px; padding-bottom: 50px;
+	}	
+	@media #{$small-and-down}{
+		padding-top: 30px; padding-bottom: 30px;
+		padding-left: 20px; padding-right: 20px;
+	}
+}
+
+.bg-image {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+//box
+.margin-top-small 				{ margin-top: 10px; }
+.margin-top 					{ margin-top: 20px; }
+.margin-top-large 				{ margin-top: 30px; }
+.margin-top-xlarge 				{ margin-top: 40px; }
+
+.margin-bottom-small 			{ margin-bottom: 10px; }
+.margin-bottom 					{ margin-bottom: 20px; }
+.margin-bottom-large 			{ margin-bottom: 30px; }
+.margin-bottom-xlarge 			{ margin-bottom: 40px; }
+.no-margin-bottom	 			{ margin-bottom: 0px; }
+
+.margin-right-small 			{ margin-right: 10px; }
+.margin-right 					{ margin-right: 20px; }
+.margin-right-large 			{ margin-right: 30px; }
+.margin-right-xlarge 			{ margin-right: 40px; }
+
+.margin-left-small 				{ margin-left: 10px; }
+.margin-left 					{ margin-left: 20px; }
+.margin-left-large 				{ margin-left: 30px; }
+.margin-left-xlarge 			{ margin-left: 40px; }
+
+@media #{$small-and-down}{
+	.margin-bottom-small-sm-and-down	{ margin-bottom: 10px; }
+}
+
+
+.padding-top-small 				{ padding-top: 10px; }
+.padding-top 					{ padding-top: 20px; }
+.padding-top-large 				{ padding-top: 30px; }
+.padding-top-xlarge 			{ padding-top: 40px; }
+
+.padding-bottom-small 			{ padding-bottom: 10px; }
+.padding-bottom 				{ padding-bottom: 20px; }
+.padding-bottom-large 			{ padding-bottom: 30px; }
+.padding-bottom-xlarge 			{ padding-bottom: 40px; }
+.padding-bottom-75p				{ padding-bottom: 75%}
+
+.padding-right-small 			{ padding-right: 10px; }
+.padding-right 					{ padding-right: 20px; }
+.padding-right-large 			{ padding-right: 30px; }
+.padding-right-xlarge 			{ padding-right: 40px; }
+
+.padding-left-small 			{ padding-left: 10px; }
+.padding-left 					{ padding-left: 20px; }
+.padding-left-large 			{ padding-left: 30px; }
+.padding-left-xlarge 			{ padding-left: 40px; }
+
+.padding-top-bottom-small 		{ padding-top: 10px!important; padding-bottom: 10px!important; }
+.padding-top-bottom 			{ padding-top: 20px!important; padding-bottom: 20px!important; }
+.padding-top-bottom-large 		{ padding-top: 30px!important; padding-bottom: 30px!important; }
+.padding-top-bottom-xlarge 		{ padding-top: 40px!important; padding-bottom: 40px!important; }
+
+.padding-right-left-small 		{ padding-right: 10px!important; padding-left: 10px!important; }
+.padding-right-left 			{ padding-right: 20px!important; padding-left: 20px!important; }
+.padding-right-left-large 		{ padding-right: 30px!important; padding-left: 30px!important; }
+.padding-right-left-xlarge 		{ padding-right: 40px!important; padding-left: 40px!important; }
+
+@media #{$small-and-down}{
+	.no-padding-top-s-and-down	{ padding-top: 0px!important; }
+}
+
+//size
+.width-100p { width: 100%; }
+
+//Position
+.absolute { position: absolute; }
+.relative { position: relative; }
+
+.right-0 { right: 0; }
+.left-0 { left: 0; }
+.top-0 { top: 0; }
+.bottom-0 { bottom: 0; }
+
+//display
+.block { display: block; }
+.inline-block { display: inline-block; }
+
+//align
+.text-center { text-align: center; } 
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.align-middle { vertical-align: middle; }
+
+
+
+
+//line
+
+hr.line-difumined-small {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+hr.line-difumined-to-rigth {
+	border: 0;
+	height: 1px;
+	margin: 15px 0;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	@media #{$small-and-down}{
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+}
+
+
+/* Single */
+#info-pack {
+	border: 2px solid $primary-color;
+	border-radius: 5px;
+	padding: 20px 20px 50px;
+	text-align: center;
+	position: relative;
+	@extend .z-depth-1;
+	a:not(.btn) {
+		color: $primary-color;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	img {
+		position: absolute;
+		transform: translateX(-50%);		
+	}
+}
+
+//Mapa entregas
+#mexico-map {
+	#otros {
+		fill: gray;
+	}
+	g {
+		fill: $primary-color-light;
+		&.active {
+			fill: $primary-color;
+		}
+	}
+}
+#provinceInfo {
+	position: absolute;
+	top: 0px;
+}

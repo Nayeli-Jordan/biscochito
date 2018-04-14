@@ -1,3 +1,5 @@
 <?php get_header(); ?>
-	<p>contenido</p>
+<section class="[ container ]">
+	contenido
+</section>
 <?php get_footer(); ?>

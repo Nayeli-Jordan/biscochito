@@ -1,11 +1,13 @@
 
 a {
   text-decoration: none;
+  &.underline { text-decoration: underline; }
 }
 p {
   margin: 0px;
   &.large { font-size: 16px; }
 }
+.text-large { font-size: 16px; }
 
 html{
   line-height: 1.5;

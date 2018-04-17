@@ -78,9 +78,10 @@
 								$menu_items = wp_get_nav_menu_items( $menu->term_id );
 								$menu_list = '';
 								foreach ( (array) $menu_items as $key => $menu_item) {
+									$id 		= $menu_item->attr_title;
 									$title 		= $menu_item->title;
 									$url 		= $menu_item->url;
-									$menu_list .='<li><a href="' . $url . '" class="">' . $title . '</a></li>';
+									$menu_list .='<li><a id="' . $id . '" href="' . $url . '" class="">' . $title . '</a></li>';
 								}
 							}
 							echo $menu_list;
@@ -89,4 +90,4 @@
 				</div>
 			</nav>
 		</header>
-		<div class="[ main-body ]">
+		<div id="section-intro" class="[ main-body ]">

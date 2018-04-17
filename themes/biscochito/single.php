@@ -1,5 +1,7 @@
 <?php 
 	get_header();
+	global $post;
+	
 	while ( have_posts() ) : the_post(); 
 ?>
 	<section class="[ relative ][ bg-image ][ padding-top-bottom-large ]" style="background-image: url(<?php echo THEMEPATH ?>images/bg-initial.png);">
@@ -106,7 +108,7 @@
 							</tr>
 						</tbody>
 					</table>
-					<p><a href="<?php echo SITEURL ?>/politicas-de-ventas">Políticas de venta</a></p>
+					<p><a href="<?php echo SITEURL ?>/politicas-de-ventas" target="_blank">Políticas de venta</a></p>
 					<p class="[ margin-bottom ]"><a href="<?php echo SITEURL ?>/costo-de-entrega">Costo de entrega</a></p>
 					<a class="waves-effect waves-light btn margin-bottom-small" href="<?php echo SITEURL ?>/paquetes">ver todos los paquetes</a>			
 					<div class="[ relative ]">

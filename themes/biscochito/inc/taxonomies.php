@@ -28,7 +28,7 @@ function custom_taxonomies_callback(){
 			'rewrite'           => array( 'slug' => 'opcion' ),
 		);
 
-		register_taxonomy( 'opcion', 'post', $args );
+		register_taxonomy( 'opcion', 'paquete', $args );
 	}		
 
 	// Extras que incluye el paquete
@@ -54,7 +54,7 @@ function custom_taxonomies_callback(){
 			'rewrite'           => array( 'slug' => 'extra' ),
 		);
 
-		register_taxonomy( 'extra', 'post', $args );
+		register_taxonomy( 'extra', 'paquete', $args );
 	}
 
 	// Dulces de la variedad

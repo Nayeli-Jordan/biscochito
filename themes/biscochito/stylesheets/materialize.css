@@ -3220,7 +3220,7 @@ a {
 
 /* 2dp elevation modified*/
 /* line 81, ../sass/components/_global.scss */
-.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-small, .btn-floating, .dropdown-content, .collapsible, #info-pack {
+.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-small, .btn-floating, .dropdown-content, .collapsible, .return-top, #info-pack {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -5239,17 +5239,26 @@ nav .input-field label.active i {
 a {
   text-decoration: none;
 }
+/* line 4, ../sass/components/_typography.scss */
+a.underline {
+  text-decoration: underline;
+}
 
-/* line 5, ../sass/components/_typography.scss */
+/* line 6, ../sass/components/_typography.scss */
 p {
   margin: 0px;
 }
-/* line 7, ../sass/components/_typography.scss */
+/* line 8, ../sass/components/_typography.scss */
 p.large {
   font-size: 16px;
 }
 
 /* line 10, ../sass/components/_typography.scss */
+.text-large {
+  font-size: 16px;
+}
+
+/* line 12, ../sass/components/_typography.scss */
 html {
   line-height: 1.5;
   font-family: 'Open Sans', sans-serif;
@@ -5258,231 +5267,231 @@ html {
   color: rgba(0, 0, 0, 0.87);
 }
 @media only screen and (min-width: 0) {
-  /* line 10, ../sass/components/_typography.scss */
+  /* line 12, ../sass/components/_typography.scss */
   html {
     font-size: 14px;
   }
 }
 @media only screen and (min-width: 992px) {
-  /* line 10, ../sass/components/_typography.scss */
+  /* line 12, ../sass/components/_typography.scss */
   html {
     font-size: 14.5px;
   }
 }
 @media only screen and (min-width: 1200px) {
-  /* line 10, ../sass/components/_typography.scss */
+  /* line 12, ../sass/components/_typography.scss */
   html {
     font-size: 15px;
   }
 }
 
-/* line 30, ../sass/components/_typography.scss */
+/* line 32, ../sass/components/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Kalam', cursive;
   font-weight: 400;
   line-height: 1.3;
 }
 
-/* line 37, ../sass/components/_typography.scss */
+/* line 39, ../sass/components/_typography.scss */
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   font-weight: inherit;
 }
 
-/* line 38, ../sass/components/_typography.scss */
+/* line 40, ../sass/components/_typography.scss */
 h1 {
   font-size: 26px;
   line-height: 110%;
   margin: 0;
 }
 
-/* line 39, ../sass/components/_typography.scss */
+/* line 41, ../sass/components/_typography.scss */
 h2 {
   font-size: 24px;
   line-height: 110%;
   margin: 0 0 20px;
 }
 
-/* line 40, ../sass/components/_typography.scss */
+/* line 42, ../sass/components/_typography.scss */
 h3 {
   font-size: 18px;
   line-height: 110%;
   margin: 0;
 }
 
-/* line 41, ../sass/components/_typography.scss */
+/* line 43, ../sass/components/_typography.scss */
 h4 {
   font-size: 16px;
   line-height: 110%;
   margin: 0;
 }
 
-/* line 42, ../sass/components/_typography.scss */
+/* line 44, ../sass/components/_typography.scss */
 h5 {
   font-size: 14px;
   line-height: 110%;
   margin: 0;
 }
 
-/* line 43, ../sass/components/_typography.scss */
+/* line 45, ../sass/components/_typography.scss */
 h6 {
   font-size: 12px;
   line-height: 110%;
   margin: 0;
 }
 
-/* line 46, ../sass/components/_typography.scss */
+/* line 48, ../sass/components/_typography.scss */
 em {
   font-style: italic;
 }
 
-/* line 47, ../sass/components/_typography.scss */
+/* line 49, ../sass/components/_typography.scss */
 strong {
   font-weight: 500;
 }
 
-/* line 48, ../sass/components/_typography.scss */
+/* line 50, ../sass/components/_typography.scss */
 small {
   font-size: 75%;
 }
 
-/* line 49, ../sass/components/_typography.scss */
+/* line 51, ../sass/components/_typography.scss */
 .light {
   font-weight: 300;
 }
 
-/* line 50, ../sass/components/_typography.scss */
+/* line 52, ../sass/components/_typography.scss */
 .thin {
   font-weight: 200;
 }
 
 @media only screen and (min-width: 360px) {
-  /* line 53, ../sass/components/_typography.scss */
+  /* line 55, ../sass/components/_typography.scss */
   .flow-text {
     font-size: 1.2rem;
   }
 }
 @media only screen and (min-width: 390px) {
-  /* line 53, ../sass/components/_typography.scss */
+  /* line 55, ../sass/components/_typography.scss */
   .flow-text {
     font-size: 1.224rem;
   }
 }
 @media only screen and (min-width: 420px) {
-  /* line 53, ../sass/components/_typography.scss */
+  /* line 55, ../sass/components/_typography.scss */
   .flow-text {
     font-size: 1.248rem;
   }
 }
 @media only screen and (min-width: 450px) {
-  /* line 53, ../sass/components/_typography.scss */
+  /* line 55, ../sass/components/_typography.scss */
   .flow-text {
     font-size: 1.272rem;
   }
 }
 @media only screen and (min-width: 480px) {
-  /* line 53, ../sass/components/_typography.scss */
+  /* line 55, ../sass/components/_typography.scss */
   .flow-text {
     font-size: 1.296rem;
   }
 }
 @media only screen and (min-width: 510px) {
-  /* line 53, ../sass/components/_typography.scss */
+  /* line 55, ../sass/components/_typography.scss */
   .flow-text {
     font-size: 1.32rem;
   }
 }
 @media only screen and (min-width: 540px) {
-  /* line 53, ../sass/components/_typography.scss */
+  /* line 55, ../sass/components/_typography.scss */
   .flow-text {
     font-size: 1.344rem;
   }
 }
 @media only screen and (min-width: 570px) {
-  /* line 53, ../sass/components/_typography.scss */
+  /* line 55, ../sass/components/_typography.scss */
   .flow-text {
     font-size: 1.368rem;
   }
 }
 @media only screen and (min-width: 600px) {
-  /* line 53, ../sass/components/_typography.scss */
+  /* line 55, ../sass/components/_typography.scss */
   .flow-text {
     font-size: 1.392rem;
   }
 }
 @media only screen and (min-width: 630px) {
-  /* line 53, ../sass/components/_typography.scss */
+  /* line 55, ../sass/components/_typography.scss */
   .flow-text {
     font-size: 1.416rem;
   }
 }
 @media only screen and (min-width: 660px) {
-  /* line 53, ../sass/components/_typography.scss */
+  /* line 55, ../sass/components/_typography.scss */
   .flow-text {
     font-size: 1.44rem;
   }
 }
 @media only screen and (min-width: 690px) {
-  /* line 53, ../sass/components/_typography.scss */
+  /* line 55, ../sass/components/_typography.scss */
   .flow-text {
     font-size: 1.464rem;
   }
 }
 @media only screen and (min-width: 720px) {
-  /* line 53, ../sass/components/_typography.scss */
+  /* line 55, ../sass/components/_typography.scss */
   .flow-text {
     font-size: 1.488rem;
   }
 }
 @media only screen and (min-width: 750px) {
-  /* line 53, ../sass/components/_typography.scss */
+  /* line 55, ../sass/components/_typography.scss */
   .flow-text {
     font-size: 1.512rem;
   }
 }
 @media only screen and (min-width: 780px) {
-  /* line 53, ../sass/components/_typography.scss */
+  /* line 55, ../sass/components/_typography.scss */
   .flow-text {
     font-size: 1.536rem;
   }
 }
 @media only screen and (min-width: 810px) {
-  /* line 53, ../sass/components/_typography.scss */
+  /* line 55, ../sass/components/_typography.scss */
   .flow-text {
     font-size: 1.56rem;
   }
 }
 @media only screen and (min-width: 840px) {
-  /* line 53, ../sass/components/_typography.scss */
+  /* line 55, ../sass/components/_typography.scss */
   .flow-text {
     font-size: 1.584rem;
   }
 }
 @media only screen and (min-width: 870px) {
-  /* line 53, ../sass/components/_typography.scss */
+  /* line 55, ../sass/components/_typography.scss */
   .flow-text {
     font-size: 1.608rem;
   }
 }
 @media only screen and (min-width: 900px) {
-  /* line 53, ../sass/components/_typography.scss */
+  /* line 55, ../sass/components/_typography.scss */
   .flow-text {
     font-size: 1.632rem;
   }
 }
 @media only screen and (min-width: 930px) {
-  /* line 53, ../sass/components/_typography.scss */
+  /* line 55, ../sass/components/_typography.scss */
   .flow-text {
     font-size: 1.656rem;
   }
 }
 @media only screen and (min-width: 960px) {
-  /* line 53, ../sass/components/_typography.scss */
+  /* line 55, ../sass/components/_typography.scss */
   .flow-text {
     font-size: 1.68rem;
   }
 }
 @media only screen and (max-width: 360px) {
-  /* line 53, ../sass/components/_typography.scss */
+  /* line 55, ../sass/components/_typography.scss */
   .flow-text {
     font-size: 1.2rem;
   }
@@ -6763,9 +6772,13 @@ button.btn-floating {
 /* line 14, ../sass/components/_materialbox.scss */
 .materialboxed.active {
   cursor: zoom-out;
+  width: auto !important;
+  height: auto !important;
+  max-width: 85vw !important;
+  max-height: 90vh;
 }
 
-/* line 19, ../sass/components/_materialbox.scss */
+/* line 25, ../sass/components/_materialbox.scss */
 #materialbox-overlay {
   position: fixed;
   top: 0;
@@ -6777,7 +6790,7 @@ button.btn-floating {
   will-change: opacity;
 }
 
-/* line 30, ../sass/components/_materialbox.scss */
+/* line 36, ../sass/components/_materialbox.scss */
 .materialbox-caption {
   position: fixed;
   display: none;
@@ -9825,6 +9838,33 @@ footer a:hover {
   text-decoration: underline;
 }
 
+/* line 17, ../sass/components/_footer.scss */
+.return-top {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #EE5052;
+  color: #fff;
+  opacity: 0.6;
+  cursor: pointer;
+  -webkit-transition: all .1s ease;
+  -moz-transition: all .1s ease;
+  -o-transition: all .1s ease;
+  transition: all .1s ease;
+}
+/* line 33, ../sass/components/_footer.scss */
+.return-top:hover {
+  opacity: 0.9;
+}
+/* line 36, ../sass/components/_footer.scss */
+.return-top i {
+  line-height: 36px;
+  font-size: 40px;
+}
+
 /* line 2, ../sass/components/_utilities.scss */
 .color-primary-light {
   color: #FFB3BA;
@@ -10068,125 +10108,137 @@ footer a:hover {
 }
 
 /* line 79, ../sass/components/_utilities.scss */
+.padding-top-bottom-xsmall {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
+
+/* line 80, ../sass/components/_utilities.scss */
 .padding-top-bottom-small {
   padding-top: 10px !important;
   padding-bottom: 10px !important;
 }
 
-/* line 80, ../sass/components/_utilities.scss */
+/* line 81, ../sass/components/_utilities.scss */
 .padding-top-bottom {
   padding-top: 20px !important;
   padding-bottom: 20px !important;
 }
 
-/* line 81, ../sass/components/_utilities.scss */
+/* line 82, ../sass/components/_utilities.scss */
 .padding-top-bottom-large {
   padding-top: 30px !important;
   padding-bottom: 30px !important;
 }
 
-/* line 82, ../sass/components/_utilities.scss */
+/* line 83, ../sass/components/_utilities.scss */
 .padding-top-bottom-xlarge {
-  padding-top: 40px !important;
-  padding-bottom: 40px !important;
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
 }
 
-/* line 84, ../sass/components/_utilities.scss */
+/* line 85, ../sass/components/_utilities.scss */
+.padding-right-left-xsmall {
+  padding-right: 5px !important;
+  padding-left: 5px !important;
+}
+
+/* line 86, ../sass/components/_utilities.scss */
 .padding-right-left-small {
   padding-right: 10px !important;
   padding-left: 10px !important;
 }
 
-/* line 85, ../sass/components/_utilities.scss */
+/* line 87, ../sass/components/_utilities.scss */
 .padding-right-left {
   padding-right: 20px !important;
   padding-left: 20px !important;
 }
 
-/* line 86, ../sass/components/_utilities.scss */
+/* line 88, ../sass/components/_utilities.scss */
 .padding-right-left-large {
   padding-right: 30px !important;
   padding-left: 30px !important;
 }
 
-/* line 87, ../sass/components/_utilities.scss */
+/* line 89, ../sass/components/_utilities.scss */
 .padding-right-left-xlarge {
   padding-right: 40px !important;
   padding-left: 40px !important;
 }
 
 @media only screen and (max-width: 600px) {
-  /* line 90, ../sass/components/_utilities.scss */
+  /* line 92, ../sass/components/_utilities.scss */
   .no-padding-top-s-and-down {
     padding-top: 0px !important;
   }
 }
-/* line 94, ../sass/components/_utilities.scss */
+/* line 96, ../sass/components/_utilities.scss */
 .width-100p {
-  width: 100%;
+  width: 100% !important;
 }
 
-/* line 97, ../sass/components/_utilities.scss */
+/* line 99, ../sass/components/_utilities.scss */
 .absolute {
   position: absolute;
 }
 
-/* line 98, ../sass/components/_utilities.scss */
+/* line 100, ../sass/components/_utilities.scss */
 .relative {
   position: relative;
 }
 
-/* line 100, ../sass/components/_utilities.scss */
+/* line 102, ../sass/components/_utilities.scss */
 .right-0 {
   right: 0;
 }
 
-/* line 101, ../sass/components/_utilities.scss */
+/* line 103, ../sass/components/_utilities.scss */
 .left-0 {
   left: 0;
 }
 
-/* line 102, ../sass/components/_utilities.scss */
+/* line 104, ../sass/components/_utilities.scss */
 .top-0 {
   top: 0;
 }
 
-/* line 103, ../sass/components/_utilities.scss */
+/* line 105, ../sass/components/_utilities.scss */
 .bottom-0 {
   bottom: 0;
 }
 
-/* line 106, ../sass/components/_utilities.scss */
+/* line 108, ../sass/components/_utilities.scss */
 .block {
   display: block;
 }
 
-/* line 107, ../sass/components/_utilities.scss */
+/* line 109, ../sass/components/_utilities.scss */
 .inline-block {
   display: inline-block;
 }
 
-/* line 110, ../sass/components/_utilities.scss */
+/* line 112, ../sass/components/_utilities.scss */
 .text-center {
   text-align: center;
 }
 
-/* line 111, ../sass/components/_utilities.scss */
+/* line 113, ../sass/components/_utilities.scss */
 .text-left {
   text-align: left;
 }
 
-/* line 112, ../sass/components/_utilities.scss */
+/* line 114, ../sass/components/_utilities.scss */
 .text-right {
   text-align: right;
 }
 
-/* line 114, ../sass/components/_utilities.scss */
+/* line 116, ../sass/components/_utilities.scss */
 .align-middle {
   vertical-align: middle;
 }
 
-/* line 121, ../sass/components/_utilities.scss */
+/* line 123, ../sass/components/_utilities.scss */
 hr.line-difumined-small {
   border: 0;
   height: 1px;
@@ -10194,7 +10246,7 @@ hr.line-difumined-small {
   background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
 
-/* line 127, ../sass/components/_utilities.scss */
+/* line 129, ../sass/components/_utilities.scss */
 hr.line-difumined-to-rigth {
   border: 0;
   height: 1px;
@@ -10202,14 +10254,14 @@ hr.line-difumined-to-rigth {
   background-image: linear-gradient(to right, black, rgba(0, 0, 0, 0.75), transparent);
 }
 @media only screen and (max-width: 600px) {
-  /* line 127, ../sass/components/_utilities.scss */
+  /* line 129, ../sass/components/_utilities.scss */
   hr.line-difumined-to-rigth {
     background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.75), transparent);
   }
 }
 
 /* Single */
-/* line 139, ../sass/components/_utilities.scss */
+/* line 141, ../sass/components/_utilities.scss */
 #info-pack {
   border: 2px solid #EE5052;
   border-radius: 5px;
@@ -10217,35 +10269,113 @@ hr.line-difumined-to-rigth {
   text-align: center;
   position: relative;
 }
-/* line 146, ../sass/components/_utilities.scss */
+/* line 148, ../sass/components/_utilities.scss */
 #info-pack a:not(.btn):not(.btn-large):not(.btn-small) {
   color: #EE5052;
 }
-/* line 148, ../sass/components/_utilities.scss */
+/* line 150, ../sass/components/_utilities.scss */
 #info-pack a:not(.btn):not(.btn-large):not(.btn-small):hover {
   text-decoration: underline;
 }
-/* line 152, ../sass/components/_utilities.scss */
+/* line 154, ../sass/components/_utilities.scss */
 #info-pack img {
   position: absolute;
   transform: translateX(-50%);
 }
 
-/* line 160, ../sass/components/_utilities.scss */
+/* line 162, ../sass/components/_utilities.scss */
 #mexico-map #otros {
-  fill: gray;
-}
-/* line 163, ../sass/components/_utilities.scss */
-#mexico-map g {
-  fill: #FFB3BA;
+  fill: #eee;
 }
 /* line 165, ../sass/components/_utilities.scss */
+#mexico-map g {
+  cursor: pointer;
+  fill: #CBC5C5;
+}
+/* line 168, ../sass/components/_utilities.scss */
+#mexico-map g.bajo {
+  fill: #82D5FC;
+}
+/* line 169, ../sass/components/_utilities.scss */
+#mexico-map g.medio {
+  fill: #C58ADE;
+}
+/* line 170, ../sass/components/_utilities.scss */
+#mexico-map g.alto {
+  fill: #4A5374;
+}
+/* line 171, ../sass/components/_utilities.scss */
+#mexico-map g.cotizar {
+  fill: #CBC5C5;
+}
+/* line 172, ../sass/components/_utilities.scss */
 #mexico-map g.active {
-  fill: #EE5052;
+  opacity: 0.8;
 }
 
-/* line 170, ../sass/components/_utilities.scss */
+/* line 179, ../sass/components/_utilities.scss */
+.price-zone span.block-color-precio {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+/* line 183, ../sass/components/_utilities.scss */
+.price-zone span.block-color-precio.bajo {
+  background-color: #82D5FC;
+}
+/* line 184, ../sass/components/_utilities.scss */
+.price-zone span.block-color-precio.medio {
+  background-color: #C58ADE;
+}
+/* line 185, ../sass/components/_utilities.scss */
+.price-zone span.block-color-precio.alto {
+  background-color: #4A5374;
+}
+/* line 186, ../sass/components/_utilities.scss */
+.price-zone span.block-color-precio.cotizar {
+  background-color: #CBC5C5;
+}
+
+/* line 190, ../sass/components/_utilities.scss */
 #provinceInfo {
   position: absolute;
   top: 0px;
+  width: 100px;
+}
+
+/* ---- grid ---- */
+/* clear fix */
+/* line 5, ../sass/components/_masonry.scss */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+/* line 10, ../sass/components/_masonry.scss */
+.grid .grid-item {
+  float: left;
+  padding: 5px;
+}
+@media only screen and (max-width: 600px) {
+  /* line 10, ../sass/components/_masonry.scss */
+  .grid .grid-item {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 601px) {
+  /* line 10, ../sass/components/_masonry.scss */
+  .grid .grid-item {
+    width: 33.3333333%;
+  }
+}
+@media only screen and (min-width: 993px) {
+  /* line 10, ../sass/components/_masonry.scss */
+  .grid .grid-item {
+    width: 25%;
+  }
+}
+/* line 16, ../sass/components/_masonry.scss */
+.grid .grid-item img {
+  display: block;
+  max-width: 100%;
 }

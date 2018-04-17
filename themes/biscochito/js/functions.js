@@ -19,7 +19,12 @@ var $=jQuery.noConflict();
 			$('.tooltipped').tooltip();
 			$('select').material_select();
 
-			mapSvg();
+			imageMasonry();
+			
+			$('.materialboxed').materialbox();
+			//Permite el scroll si se está en home
+			$("a#contacto").removeAttr("href");
+
 		});
  
 		$(window).on('resize', function(){
@@ -33,10 +38,33 @@ var $=jQuery.noConflict();
  
 		if( parseInt( isHome ) ){
 			$(document).ready(function() {
-
+				mapSvg();
+				//Permite el scroll si se está en home
+				$("a#servicios").removeAttr("href");
 			});
 		} 
  
+		//Scroll menú
+		$("a#contacto, a#servicios, .return-top").click(function() {
+			//buttonMenuScroll();
+			var idOption = $(this).attr('id'); //Opción del menú
+			// console.log(idOption);
+			var idSection = "#section-" + idOption; //Sección a la que se dirigirá
+			// console.log(idSection); 
+			$('html, body').animate({		
+				scrollTop: $(idSection).offset().top - 70
+			}, 1500);
+		});
+
+		//  $(".grid-item").click(function() {
+		// 	$(this).addClass('width-100p' );
+		// 	$('.grid-item.width-100p img').addClass('materialboxed' );
+		// 	$('.materialboxed').materialbox();
+		// 	setTimeout(function() {
+		// 		//$('.grid-item.width-100p img.materialboxed').click();
+		// 	}, 2000);
+		// }); 
+
 	});
 })(jQuery);
  
@@ -54,6 +82,19 @@ function getFooterHeight(){
 	return $('footer').outerHeight();
 }// getFooterHeight
 
+//Masonry galería
+function imageMasonry(){
+	// init Packery
+	var $grid = $('.grid').packery({
+		itemSelector: '.grid-item',
+		percentPosition: true
+	});
+	// layout Packery after each image loads
+	$grid.imagesLoaded().progress( function() {
+		$grid.packery();
+	}); 
+}
+
 //Mapa de costo de entrega
 function mapSvg(){
 	var mexicomap = document.getElementById("mexico-map"),
@@ -67,7 +108,7 @@ function mapSvg(){
 		}
 		province.classList.add("active");
 		var provinceName = province.querySelector("title").innerHTML,
-		provincePara = province.querySelector("desc p");
+		provincePara = province.querySelector("desc");
 		// sourceImg = province.querySelector("img"),
 		// imgPath = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/";
 		provinceInfo.innerHTML = "";

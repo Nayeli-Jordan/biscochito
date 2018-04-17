@@ -12,6 +12,7 @@ define( 'SITEURL', get_site_url() . '/' );
 	#SNIPPETS
 \*------------------------------------*/
 // require_once( 'inc/pages.php' );
+require_once( 'inc/pages.php' );
 require_once( 'inc/post-types.php' );
 require_once( 'inc/taxonomies.php' );
 
@@ -26,17 +27,18 @@ add_action( 'wp_enqueue_scripts', function(){
  
 	wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-3.2.1.min.js', array(''), '2.1.1', true );
 	wp_enqueue_script( 'materialize_js', JSPATH.'bin/materialize.min.js', array('jquery'), '1.0', true );
-	//wp_enqueue_script( 'wow_js', JSPATH.'wow.min.js', array(), '', true );
-	wp_enqueue_script( 'dw_functions', JSPATH.'functions.js', array('materialize_js'), '1.0', true );
+    wp_enqueue_script( 'imagesloaded_js', JSPATH.'imagesloaded.pkgd.min.js', array(), '', true );
+	wp_enqueue_script( 'masonry_js', JSPATH.'packery.pkgd.min.js', array(), '', true );
+	wp_enqueue_script( 'bct_functions', JSPATH.'functions.js', array('materialize_js'), '1.0', true );
  
-	wp_localize_script( 'dw_functions', 'siteUrl', SITEURL );
-	wp_localize_script( 'dw_functions', 'theme_path', THEMEPATH );
+	wp_localize_script( 'bct_functions', 'siteUrl', SITEURL );
+	wp_localize_script( 'bct_functions', 'theme_path', THEMEPATH );
 	
-	wp_localize_script( 'dw_functions', 'isHome', (string)is_front_page() );
+	//wp_localize_script( 'dw_functions', 'isHome', (string)is_front_page() );
 	// wp_localize_script( 'dw_functions', 'isSingular', (string)is_singular() );
 	
-	// $is_home = is_front_page() ? "1" : "0";
-	// wp_localize_script( 'ri_functions', 'isHome', $is_home );
+	$is_home = is_front_page() ? "1" : "0";
+	wp_localize_script( 'bct_functions', 'isHome', $is_home );
 	// $is_singular = is_singular() ? "1" : "0";
 	// wp_localize_script( 'ri_functions', 'isSingular', $is_singular );
 	// $is_archive = is_archive() ? "1" : "0";
@@ -103,83 +105,71 @@ if(!is_admin()) {
     add_action('wp_footer', 'wp_print_head_scripts', 5);
 }
 
+
 /**
- * Custom menú.
- */
-class WPDocs_Walker_Nav_Menu extends Walker_Nav_Menu {
- 
-    /**
-     * Starts the list before the elements are added.
-     *
-     * Adds classes to the unordered list sub-menus.
-     *
-     * @param string $output Passed by reference. Used to append additional content.
-     * @param int    $depth  Depth of menu item. Used for padding.
-     * @param array  $args   An array of arguments. @see wp_nav_menu()
-     */
-    function start_lvl( &$output, $depth = 0, $args = array() ) {
-        // Depth-dependent classes.
-        $indent = ( $depth > 0  ? str_repeat( "\t", $depth ) : '' ); // code indent
-        $display_depth = ( $depth + 1); // because it counts the first submenu as 0
-        $classes = array(
-            'sub-menu',
-            ( $display_depth % 2  ? 'menu-odd' : 'menu-even' ),
-            ( $display_depth >=2 ? 'sub-sub-menu' : '' ),
-            'menu-depth-' . $display_depth
-        );
-        $class_names = implode( ' ', $classes );
- 
-        // Build HTML for output.
-        $output .= "\n" . $indent . '<ul class="' . $class_names . '">' . "\n";
-    }
- 
-    /**
-     * Start the element output.
-     *
-     * Adds main/sub-classes to the list items and links.
-     *
-     * @param string $output Passed by reference. Used to append additional content.
-     * @param object $item   Menu item data object.
-     * @param int    $depth  Depth of menu item. Used for padding.
-     * @param array  $args   An array of arguments. @see wp_nav_menu()
-     * @param int    $id     Current item ID.
-     */
-    function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-        global $wp_query;
-        $indent = ( $depth > 0 ? str_repeat( "\t", $depth ) : '' ); // code indent
- 
-        // Depth-dependent classes.
-        $depth_classes = array(
-            ( $depth == 0 ? 'main-menu-item' : 'sub-menu-item' ),
-            ( $depth >=2 ? 'sub-sub-menu-item' : '' ),
-            ( $depth % 2 ? 'menu-item-odd' : 'menu-item-even' ),
-            'menu-item-depth-' . $depth
-        );
-        $depth_class_names = esc_attr( implode( ' ', $depth_classes ) );
- 
-        // Passed classes.
-        $classes = empty( $item->classes ) ? array() : (array) $item->classes;
-        $class_names = esc_attr( implode( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) ) );
- 
-        // Build HTML.
-        $output .= $indent . '<li id="nav-menu-item-'. $item->ID . '" class="' . $depth_class_names . ' ' . $class_names . '">';
- 
-        // Link attributes.
-        $attributes  = ! empty( $item->attr_title ) ? ' id="'  . esc_attr( $item->attr_title ) .'"' : '';
-        $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
-        $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
-        $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
-        $attributes .= ' class="' . ( $depth > 0 ? 'sub-menu-link' : 'main-menu-link' ) . '"';
- 
-        // Build HTML output and pass through the proper filter.
-        $item_output = sprintf( '%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
-            $args->before,
-            $attributes,
-            $args->link_before,
-            apply_filters( 'the_title', $item->title, $item->ID ),
-            $args->link_after,
-            $args->after
-        );
-        $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+* CUSTOM POST TYPE
+*/
+
+//Costo de entrega
+add_action( 'add_meta_boxes', 'zona_custom_metabox' );
+
+function zona_custom_metabox(){
+    add_meta_box( 'zona_meta', 'Información para zona de entrega', 'display_zona_atributos', 'zona', 'advanced', 'default');
+}
+
+function display_zona_atributos( $zona ){
+    $id         = esc_html( get_post_meta( $zona->ID, 'zona_id', true ) );
+    $precio     = esc_html( get_post_meta( $zona->ID, 'zona_precio', true ) );
+    $path       = esc_html( get_post_meta( $zona->ID, 'zona_path', true ) );    
+?>
+
+<table style="width:100%; text-align: left;">
+    <tr>
+        <th style="padding-bottom:10px">
+            <div style="width: 48%; margin-right: 1%; display: inline-block; float: left;">
+                <label>ID zona</label></br>
+                <input style="width:100%" type="text" name="zona_id" value="<?php echo $id; ?>">                
+            </div>
+            <div style="width: 48%; display: inline-block; float: left;">
+                <label>Precio zona</label></br>
+                <select name="zona_precio" style="width: 100%">
+                    <option name="bajo_precio" value="bajo" <?php selected($precio, 'bajo'); ?>>Bajo</option>
+                    <option name="medio_precio" value="medio" <?php selected($precio, 'medio'); ?>>Medio</option>
+                    <option name="alto_precio" value="alto" <?php selected($precio, 'alto'); ?>>Alto</option>
+                    <option name="cotizar_precio" value="cotizar" <?php selected($precio, 'cotizar'); ?>>A cotizar</option>
+                </select>
+            </div>
+        </th>
+    </tr>
+    <tr>
+        <th style="padding-bottom:10px">
+            <label>PATH (svg) zona</label></br>
+            <textarea rows="9" style="width:100%" name="zona_path"><?php echo $path; ?></textarea>
+        </th>
+    </tr>    
+    <tr>
+        <th style="text-align: center;">
+            <img style="max-width: 100%; width: 350px;" src="<?php echo THEMEPATH; ?>images/delegaciones.png" alt="">
+        </th>
+    </tr>
+</table>
+<?php
+
+}
+
+add_action( 'save_post', 'zona_save_metas', 10, 2 );
+function zona_save_metas( $idzona, $zona ){
+    //Comprobamos que es del tipo que nos interesa
+    if ( $zona->post_type == 'zona' ){
+    //Guardamos los datos que vienen en el POST
+        if ( isset( $_POST['zona_id'] ) ){
+            update_post_meta( $idzona, 'zona_id', $_POST['zona_id'] );
+        }
+        if ( isset( $_POST['zona_precio'] ) ){
+            update_post_meta( $idzona, 'zona_precio', $_POST['zona_precio'] );
+        }        
+        if ( isset( $_POST['zona_path'] ) ){
+            update_post_meta( $idzona, 'zona_path', $_POST['zona_path'] );
+        }
     }
 }

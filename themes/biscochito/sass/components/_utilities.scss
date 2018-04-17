@@ -76,11 +76,13 @@
 .padding-left-large 			{ padding-left: 30px; }
 .padding-left-xlarge 			{ padding-left: 40px; }
 
+.padding-top-bottom-xsmall 		{ padding-top: 5px!important; padding-bottom: 5px!important; }
 .padding-top-bottom-small 		{ padding-top: 10px!important; padding-bottom: 10px!important; }
 .padding-top-bottom 			{ padding-top: 20px!important; padding-bottom: 20px!important; }
 .padding-top-bottom-large 		{ padding-top: 30px!important; padding-bottom: 30px!important; }
-.padding-top-bottom-xlarge 		{ padding-top: 40px!important; padding-bottom: 40px!important; }
+.padding-top-bottom-xlarge 		{ padding-top: 60px!important; padding-bottom: 60px!important; }
 
+.padding-right-left-xsmall 		{ padding-right: 5px!important; padding-left: 5px!important; }
 .padding-right-left-small 		{ padding-right: 10px!important; padding-left: 10px!important; }
 .padding-right-left 			{ padding-right: 20px!important; padding-left: 20px!important; }
 .padding-right-left-large 		{ padding-right: 30px!important; padding-left: 30px!important; }
@@ -91,7 +93,7 @@
 }
 
 //size
-.width-100p { width: 100%; }
+.width-100p { width: 100%!important; }
 
 //Position
 .absolute { position: absolute; }
@@ -158,16 +160,35 @@ hr.line-difumined-to-rigth {
 //Mapa entregas
 #mexico-map {
 	#otros {
-		fill: gray;
+		fill: #eee;
 	}
 	g {
-		fill: $primary-color-light;
+		cursor: pointer;
+		fill: #CBC5C5; //gris	
+		&.bajo { fill: #82D5FC; } //azul
+		&.medio { fill: #C58ADE; } //violeta
+		&.alto { fill: #4A5374; } //Morado
+		&.cotizar { fill: #CBC5C5; } //gris
 		&.active {
-			fill: $primary-color;
+			opacity: 0.8;
 		}
+	}
+}
+.price-zone {
+	span {
+		&.block-color-precio {
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			&.bajo { background-color: #82D5FC; } //azul
+			&.medio { background-color: #C58ADE; } //violeta
+			&.alto { background-color: #4A5374; } //Morado
+			&.cotizar { background-color: #CBC5C5; } //gris				
+		}	
 	}
 }
 #provinceInfo {
 	position: absolute;
 	top: 0px;
+	width: 100px;
 }

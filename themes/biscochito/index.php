@@ -58,40 +58,6 @@
 		</div>
 	</section>
 	<section class="[ container ][ padding-top-bottom-xlarge ]">
-		<h2 class="[ color-primary-dark ][ text-center ]">Costo de entrega</h2>
-		<div class="[ row ]">
-			<div class="[ col s12 m4 offset-m2 ]">
-				<!-- map -->
-				<?php include (TEMPLATEPATH . '/sections/map-svg.php'); ?>	
-			</div>
-			<div class="[ col s12 m4 ]">
-				<table class="price-zone">
-					<thead>
-						<tr>
-							<th>Zona</th>
-							<th>Precio</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td><span class="block-color-precio bajo"></span></td>
-							<td>$99</td>
-						</tr>
-						<tr>
-							<td><span class="block-color-precio medio"></span></td>
-							<td>$130</td>
-						</tr>
-						<tr>
-							<td><span class="block-color-precio alto"></span></td>
-							<td>$170</td>
-						</tr>
-						<tr>
-							<td><span class="block-color-precio cotizar"></span></td>
-							<td>A cotizar</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
+		<?php include (TEMPLATEPATH . '/sections/costo-entrega.php'); ?>								
 	</section>
 <?php get_footer(); ?>

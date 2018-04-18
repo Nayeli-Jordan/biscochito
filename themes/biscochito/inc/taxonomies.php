@@ -81,6 +81,32 @@ function custom_taxonomies_callback(){
 		);
 
 		register_taxonomy( 'elemento', 'variedad', $args );
-	}		
+	}	
+
+	// Precio de entrega por zona
+	if( ! taxonomy_exists('precio')){
+
+		$labels = array(
+			'name'              => 'Precio entrega',
+			'singular_name'     => 'Precio entrega',
+			'search_items'      => 'Buscar',
+			'all_items'         => 'Todos',
+			'edit_item'         => 'Editar Precio',
+			'update_item'       => 'Actualizar Precio',
+			'add_new_item'      => 'Nueva Precio',
+			'menu_name'         => 'Precio entrega'
+		);
+		$args = array(
+			'hierarchical'      => true,
+			'labels'            => $labels,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'show_in_nav_menus' => true,
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => 'precio' ),
+		);
+
+		register_taxonomy( 'precio', 'zona', $args );
+	}			
 
 }

@@ -39,8 +39,11 @@ add_action( 'wp_enqueue_scripts', function(){
 	
 	$is_home = is_front_page() ? "1" : "0";
 	wp_localize_script( 'bct_functions', 'isHome', $is_home );
-	// $is_singular = is_singular() ? "1" : "0";
-	// wp_localize_script( 'ri_functions', 'isSingular', $is_singular );
+    $is_singular = is_singular() ? "1" : "0";
+    wp_localize_script( 'bct_functions', 'isSingular', $is_singular );
+    $is_page_gallery = is_page('gallery') ? "1" : "0";
+    wp_localize_script( 'bct_functions', 'isPageGallery', $is_page_gallery );
+	
 	// $is_archive = is_archive() ? "1" : "0";
 	// wp_localize_script( 'ri_functions', 'isArchive', $is_archive );
 	// $is_author = is_author() ? "1" : "0";
@@ -119,18 +122,17 @@ function zona_custom_metabox(){
 
 function display_zona_atributos( $zona ){
     $id         = esc_html( get_post_meta( $zona->ID, 'zona_id', true ) );
-    $precio     = esc_html( get_post_meta( $zona->ID, 'zona_precio', true ) );
     $path       = esc_html( get_post_meta( $zona->ID, 'zona_path', true ) );    
 ?>
 
 <table style="width:100%; text-align: left;">
     <tr>
         <th style="padding-bottom:10px">
-            <div style="width: 48%; margin-right: 1%; display: inline-block; float: left;">
+            <div style="width: 100%;">
                 <label>ID zona</label></br>
-                <input style="width:100%" type="text" name="zona_id" value="<?php echo $id; ?>">                
+                <input style="width:100%" type="text" name="zona_id" value="<?php echo $id; ?>" disabled>                
             </div>
-            <div style="width: 48%; display: inline-block; float: left;">
+            <!-- <div style="width: 48%; display: inline-block; float: left;">
                 <label>Precio zona</label></br>
                 <select name="zona_precio" style="width: 100%">
                     <option name="bajo_precio" value="bajo" <?php selected($precio, 'bajo'); ?>>Bajo</option>
@@ -138,13 +140,13 @@ function display_zona_atributos( $zona ){
                     <option name="alto_precio" value="alto" <?php selected($precio, 'alto'); ?>>Alto</option>
                     <option name="cotizar_precio" value="cotizar" <?php selected($precio, 'cotizar'); ?>>A cotizar</option>
                 </select>
-            </div>
+            </div> -->
         </th>
     </tr>
     <tr>
         <th style="padding-bottom:10px">
             <label>PATH (svg) zona</label></br>
-            <textarea rows="9" style="width:100%" name="zona_path"><?php echo $path; ?></textarea>
+            <textarea rows="9" style="width:100%" name="zona_path" disabled><?php echo $path; ?></textarea>
         </th>
     </tr>    
     <tr>
@@ -164,10 +166,7 @@ function zona_save_metas( $idzona, $zona ){
     //Guardamos los datos que vienen en el POST
         if ( isset( $_POST['zona_id'] ) ){
             update_post_meta( $idzona, 'zona_id', $_POST['zona_id'] );
-        }
-        if ( isset( $_POST['zona_precio'] ) ){
-            update_post_meta( $idzona, 'zona_precio', $_POST['zona_precio'] );
-        }        
+        } 
         if ( isset( $_POST['zona_path'] ) ){
             update_post_meta( $idzona, 'zona_path', $_POST['zona_path'] );
         }

@@ -9,7 +9,7 @@
 		xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
 		width="100%" 
 		height="100%" 
-		viewBox="0 0 700 720" 
+		viewBox="0 0 545 720" 
 		id="mexico-map">
 
 		<?php
@@ -25,10 +25,14 @@
 			$custom_fields 	= get_post_custom();
 			$post_id 		= get_the_ID();
 			$id 			= get_post_meta( $post_id, 'zona_id', true );
-			$precio 		= get_post_meta( $post_id, 'zona_precio', true );
-			$path 			= get_post_meta( $post_id, 'zona_path', true );			
+			$path 			= get_post_meta( $post_id, 'zona_path', true );	
+
+			$terms = get_the_terms($post->ID, 'precio');
+			foreach($terms as $term){
+				$precio = $term->slug;
+			}
 		?>
-			<g id="<?php if( $id != "" ) : echo $id; endif; ?>" class="<?php if( $precio != "" ) : echo $precio; endif; ?>">
+			<g id="<?php if( $id != "" ) : echo $id; endif; ?>" class="<?php echo $precio; ?>">
 				<title><?php the_title(); ?></title>
 				<desc>
 					<?php the_content(); ?>

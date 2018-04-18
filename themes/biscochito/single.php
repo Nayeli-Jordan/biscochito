@@ -109,7 +109,9 @@
 						</tbody>
 					</table>
 					<p><a href="<?php echo SITEURL ?>/politicas-de-ventas" target="_blank">Políticas de venta</a></p>
-					<p class="[ margin-bottom ]"><a href="<?php echo SITEURL ?>/costo-de-entrega">Costo de entrega</a></p>
+					<p class="[ margin-bottom ]">
+						<a class="modal-trigger" href="#mapaentrega">Costo de entrega</a>
+					</p>
 					<a class="waves-effect waves-light btn margin-bottom-small" href="<?php echo SITEURL ?>/paquetes">ver todos los paquetes</a>			
 					<div class="[ relative ]">
 						<img src="<?php echo THEMEPATH ?>images/caramelos.png" alt="imagen caramelos">			

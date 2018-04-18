@@ -10,21 +10,15 @@ var $=jQuery.noConflict();
 
 		$(document).ready(function() {
 			document.getElementById("year").innerHTML = new Date().getFullYear();
-			footerBottom();					
+			footerBottom();	
+			navScroll();				
 			$(".button-collapse").sideNav({
 				closeOnClick: true
 			});
-
-			$('.collapsible').collapsible();
-			$('.tooltipped').tooltip();
-			$('select').material_select();
-
-			imageMasonry();
-			
-			$('.materialboxed').materialbox();
-			//Permite el scroll si se está en home
+			// Activa estilo select materialize para form contacto 
+			$('select').material_select();			
+			// Permite el scroll a contacto
 			$("a#contacto").removeAttr("href");
-
 		});
  
 		$(window).on('resize', function(){
@@ -32,15 +26,39 @@ var $=jQuery.noConflict();
 		});
  
 		$(document).scroll(function() {
-
-
+			navScroll();
 		});
  
 		if( parseInt( isHome ) ){
-			$(document).ready(function() {
-				mapSvg();
-				//Permite el scroll si se está en home
+			$(document).ready(function() {				
+				// Permite el scroll si se está en home
 				$("a#servicios").removeAttr("href");
+				// Masonry para imagenes galería
+				imageMasonry();
+				// Activa lightbox imagenes galería
+				$('.materialboxed').materialbox();
+				// Activa mapa SVG
+				mapSvg();
+			});
+		} 
+
+		if( parseInt( isPageGallery ) ){
+			$(document).ready(function() {
+				//Masonry para imagenes galería
+				imageMasonry();
+				// Activa lightbox imagenes galería
+				$('.materialboxed').materialbox();
+			});
+		} 
+
+		if( parseInt( isSingular ) ){
+			$(document).ready(function() {
+				// Activa collapse de variedades
+				$('.collapsible').collapsible();
+				// Activa info extra de *
+				$('.tooltipped').tooltip();
+				// Activa modal
+				$('.modal').modal();
 			});
 		} 
  
@@ -55,15 +73,6 @@ var $=jQuery.noConflict();
 				scrollTop: $(idSection).offset().top - 70
 			}, 1500);
 		});
-
-		//  $(".grid-item").click(function() {
-		// 	$(this).addClass('width-100p' );
-		// 	$('.grid-item.width-100p img').addClass('materialboxed' );
-		// 	$('.materialboxed').materialbox();
-		// 	setTimeout(function() {
-		// 		//$('.grid-item.width-100p img.materialboxed').click();
-		// 	}, 2000);
-		// }); 
 
 	});
 })(jQuery);
@@ -81,6 +90,17 @@ function getHeaderHeight(){
 function getFooterHeight(){
 	return $('footer').outerHeight();
 }// getFooterHeight
+
+/**
+ * Estilo navegador fijo
+ */
+function navScroll(){
+	if ($(window).scrollTop() > 40 ) {
+		$('header nav').addClass('nav-scroll');
+	} else {
+		$('header nav').removeClass('nav-scroll');
+	};
+}
 
 //Masonry galería
 function imageMasonry(){

@@ -15,17 +15,17 @@
 		<meta name="googlebot" content="index, follow" />
 
 		<!-- Favicon -->
-		<link rel="icon" type="image/png" href="<?php echo THEMEPATH; ?>images/favicon/favicon-32x32.png" sizes="32x32" />
-		<link rel="icon" type="image/png" href="<?php echo THEMEPATH; ?>images/favicon/favicon-16x16.png" sizes="16x16" />
+		<link rel="icon" type="image/png" href="<?php echo THEMEPATH; ?>favicon/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="<?php echo THEMEPATH; ?>favicon/favicon-16x16.png" sizes="16x16" />
 
 		<!-- Facebook, Twitter metas -->
 		<meta property="og:title" content="<?php bloginfo('name'); ?>" />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="<?php echo site_url(); ?>" />
-		<meta property="og:image" content="<?php echo THEMEPATH; ?>images/">
+		<meta property="og:image" content="<?php echo THEMEPATH; ?>images/share.png">
 		<meta property="og:description" content="<?php bloginfo('description'); ?>" />
 		<meta name="twitter:description" content="<?php bloginfo('description'); ?>" />
-		<meta name="twitter:image" content="<?php echo THEMEPATH; ?>images/" />
+		<meta name="twitter:image" content="<?php echo THEMEPATH; ?>images/share.png" />
 		<meta name="twitter:title" content="<?php bloginfo('name'); ?>" />
 		<meta property="og:image:width" content="210" />
 		<meta property="og:image:height" content="110" />
@@ -41,7 +41,7 @@
 		<meta http-equiv="cleartype" content="on">
 
 		<!-- Google font(s) -->
-		<link href="https://fonts.googleapis.com/css?family=Kalam:400|Open+Sans:400" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Rancho|Open+Sans:400" rel="stylesheet">
 
 		<!--Import Google Icon Font-->
 		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -64,9 +64,9 @@
 			<nav>
 				<div class="nav-wrapper [ container ]">
 					<a href="<?php echo SITEURL ?>" class="brand-logo">
-						<span class="">Biscochito</span>
-						<!-- <img class="responsive-img logo-initial" src="<?php echo THEMEPATH ?>images/identidad/logo-gris-scale.png" alt="logo del sitio">
-						<img class="responsive-img logo-scroll hide" src="<?php echo THEMEPATH ?>images/identidad/logo-fondo.png" alt="logo del sitio"> -->
+						<h1 class="hide">Biscochito</h1>
+						<img class="responsive-img logo-initial" src="<?php echo THEMEPATH ?>images/identidad/logo.png" alt="logo del sitio">
+						<img class="responsive-img logo-scroll hide" src="<?php echo THEMEPATH ?>images/identidad/logo-fondo.png" alt="logo del sitio">
 					</a>
 					<a href="#" data-activates="menu-main-menu" class="button-collapse"><i class="material-icons">menu</i></a>
 					<ul id="menu-main-menu">

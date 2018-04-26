@@ -49,7 +49,7 @@
 	</section>	
 	<section class="[ padding-top-bottom-xlarge ][ bg-primary-light ]">
 		<div class="[ container ][ text-center ]">
-			<h2 class="[ color-light ]">Galería</h2>
+			<h2 class="[ color-primary-dark ]">Galería</h2>
 			<!-- galería -->
 			<div class="grid [ margin-bottom ]">
 				<?php include (TEMPLATEPATH . '/sections/loop-gallery.php'); ?>						
@@ -59,5 +59,13 @@
 	</section>
 	<section class="[ container ][ padding-top-bottom-xlarge ]">
 		<?php include (TEMPLATEPATH . '/sections/costo-entrega.php'); ?>								
+	</section>
+	<section class="[ padding-top-bottom-xlarge ][ bg-primary-light ]">
+		<div class="[ container ]">
+			<h2 class="[ color-primary-dark ][ text-center ]">Testimoniales</h2>
+			<div class="[ row ]">
+				<?php include (TEMPLATEPATH . '/sections/loop-testimoniales.php'); ?>						
+			</div>
+		</div>
 	</section>
 <?php get_footer(); ?>

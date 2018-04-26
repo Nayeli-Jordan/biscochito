@@ -18,7 +18,7 @@ var $=jQuery.noConflict();
 			// Activa estilo select materialize para form contacto 
 			$('select').material_select();			
 			// Permite el scroll a contacto
-			$("a#contacto").removeAttr("href");
+			$("a#contacto").removeAttr("href");			
 		});
  
 		$(window).on('resize', function(){
@@ -51,6 +51,13 @@ var $=jQuery.noConflict();
 			});
 		} 
 
+		if( parseInt( isPagePaquetes ) ){
+			$(document).ready(function() {
+				//Activar tabs paquetes
+				$('.tabs').tabs();
+			});
+		} 
+
 		if( parseInt( isSingular ) ){
 			$(document).ready(function() {
 				// Activa collapse de variedades
@@ -59,6 +66,14 @@ var $=jQuery.noConflict();
 				$('.tooltipped').tooltip();
 				// Activa modal
 				$('.modal').modal();
+				// info-pack fijo
+				infoPackFixed();
+			});
+			$(document).scroll(function() {
+				infoPackFixed();
+			});
+			$(window).on('resize', function(){
+				infoPackFixed();
 			});
 		} 
  
@@ -137,3 +152,54 @@ function mapSvg(){
 		}
 	})
 } //mapSVG
+
+/**
+ * Info pack (single) fijo
+*/
+
+//Obtener altura de sección de título del paquete single
+function getTitleHeight(){
+	return $('.main-body section:first-child').outerHeight();
+}
+//Obtener altura del contenedor de resto del paquete (col izq)
+function getLeftColHeight(){
+	return $('#content-pack').outerHeight();
+}
+//Obtener altura del #info-pack
+function getInfoPackHeight(){
+	return $('#info-pack').outerHeight();
+}
+//Obtener ancho del contenedor de #info-pack
+function getContentWidth(){
+	return $('#content-info-pack').width();
+}
+
+function infoPackFixed(){
+	var widthBox 			= getContentWidth();
+	var heightLeftPack 		= getLeftColHeight();
+
+	var alturaTitle 		= getTitleHeight();
+	var previusScroll 		= alturaTitle + 60;
+
+	var alturaInfoBox 		= getInfoPackHeight();
+	var nextScroll 			= heightLeftPack - alturaInfoBox;
+	var nextTotalScroll		= nextScroll - 65; //altura de figura caramelos
+	var restScroll	 		= previusScroll + nextTotalScroll; 
+
+	var mq = window.matchMedia( "(min-width: 601px)" );
+	if (mq.matches) {   //Is dektop
+		$('#content-info-pack').css('height', heightLeftPack);
+
+		if ($(window).scrollTop() > restScroll ) {
+			$('#info-pack').addClass('box-fixed-bottom').removeClass('box-fixed').css('width', widthBox);
+		} else if ($(window).scrollTop() > previusScroll ) {
+			$('#info-pack').addClass('box-fixed').removeClass('box-fixed-bottom').css('width', widthBox);
+		} else {
+			$('#info-pack').removeClass('box-fixed box-fixed-bottom').css('width', '');
+		}
+	} else {
+		$('#content-info-pack').css('height', '');
+		$('#info-pack').removeClass('box-fixed box-fixed-bottom').css('width', '');
+	}
+}
+

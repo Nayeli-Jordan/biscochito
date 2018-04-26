@@ -11,16 +11,18 @@
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   line-height: 1.5;
-  padding: 1rem;
+  padding: 10px;
   background-color: $collapsible-header-color;
   border-bottom: 1px solid $collapsible-border-color;
-
+  &.active {
+    .icon-open { display: none; }
+    .icon-close { display: block!important; }
+  } 
   i {
     width: 2rem;
     font-size: 1.6rem;
     display: inline-block;
     text-align: center;
-    margin-right: 1rem;
   }
 }
 
@@ -28,7 +30,13 @@
   display: none;
   border-bottom: 1px solid $collapsible-border-color;
   box-sizing: border-box;
-  padding: 2rem;
+  padding: 10px;
+  ul.list-variedades {
+      padding-left: 30px;
+      li {
+        list-style: circle;
+      }
+  }
 }
 
 // Sidenav collapsible styling

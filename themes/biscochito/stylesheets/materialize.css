@@ -3228,7 +3228,7 @@ a:hover h3 {
 
 /* 2dp elevation modified*/
 /* line 87, ../sass/components/_global.scss */
-.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-small, .btn-floating, .dropdown-content, .collapsible, .return-top, #info-pack {
+.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-small, .btn-floating, .dropdown-content, .collapsible, .return-top, #info-pack, .box-testimonial {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -5034,8 +5034,8 @@ nav {
   color: #EE5052;
   background-color: #fff;
   width: 100%;
-  height: 56px;
-  line-height: 56px;
+  height: 50px;
+  line-height: 50px;
 }
 /* line 2, ../sass/components/_navbar.scss */
 nav.nav-extended {
@@ -5090,21 +5090,31 @@ nav [class^="mdi-"], nav [class*="mdi-"],
 nav i.material-icons {
   display: block;
   font-size: 24px;
-  height: 56px;
-  line-height: 56px;
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
 }
-/* line 58, ../sass/components/_navbar.scss */
+@media only screen and (max-width: 600px) {
+  /* line 49, ../sass/components/_navbar.scss */
+  nav i,
+  nav [class^="mdi-"], nav [class*="mdi-"],
+  nav i.material-icons {
+    height: 40px;
+    line-height: 40px;
+  }
+}
+/* line 63, ../sass/components/_navbar.scss */
 nav .nav-wrapper {
   position: relative;
   height: 100%;
 }
 @media only screen and (min-width: 993px) {
-  /* line 64, ../sass/components/_navbar.scss */
+  /* line 69, ../sass/components/_navbar.scss */
   nav a.sidenav-trigger {
     display: none;
   }
 }
-/* line 69, ../sass/components/_navbar.scss */
+/* line 74, ../sass/components/_navbar.scss */
 nav .sidenav-trigger {
   float: left;
   position: relative;
@@ -5112,12 +5122,12 @@ nav .sidenav-trigger {
   height: 56px;
   margin: 0 18px;
 }
-/* line 76, ../sass/components/_navbar.scss */
+/* line 81, ../sass/components/_navbar.scss */
 nav .sidenav-trigger i {
   height: 56px;
   line-height: 56px;
 }
-/* line 84, ../sass/components/_navbar.scss */
+/* line 89, ../sass/components/_navbar.scss */
 nav .brand-logo {
   position: absolute;
   color: #fff;
@@ -5125,65 +5135,65 @@ nav .brand-logo {
   font-size: 2.1rem;
   padding: 0;
 }
-/* line 91, ../sass/components/_navbar.scss */
+/* line 96, ../sass/components/_navbar.scss */
 nav .brand-logo.center {
   left: 50%;
   transform: translateX(-50%);
 }
 @media only screen and (max-width: 600px) {
-  /* line 84, ../sass/components/_navbar.scss */
+  /* line 89, ../sass/components/_navbar.scss */
   nav .brand-logo {
     left: 50%;
     transform: translateX(-50%);
   }
-  /* line 100, ../sass/components/_navbar.scss */
+  /* line 105, ../sass/components/_navbar.scss */
   nav .brand-logo.left, nav .brand-logo.right {
     padding: 0;
     transform: none;
   }
-  /* line 105, ../sass/components/_navbar.scss */
+  /* line 110, ../sass/components/_navbar.scss */
   nav .brand-logo.left {
     left: 0.5rem;
   }
-  /* line 106, ../sass/components/_navbar.scss */
+  /* line 111, ../sass/components/_navbar.scss */
   nav .brand-logo.right {
     right: 0.5rem;
     left: auto;
   }
 }
-/* line 112, ../sass/components/_navbar.scss */
+/* line 117, ../sass/components/_navbar.scss */
 nav .brand-logo.right {
   right: 0.5rem;
   padding: 0;
 }
-/* line 117, ../sass/components/_navbar.scss */
+/* line 122, ../sass/components/_navbar.scss */
 nav .brand-logo i,
 nav .brand-logo [class^="mdi-"], nav .brand-logo [class*="mdi-"],
 nav .brand-logo i.material-icons {
   float: left;
   margin-right: 15px;
 }
-/* line 127, ../sass/components/_navbar.scss */
+/* line 132, ../sass/components/_navbar.scss */
 nav .nav-title {
   display: inline-block;
   font-size: 32px;
   padding: 28px 0;
 }
-/* line 135, ../sass/components/_navbar.scss */
+/* line 140, ../sass/components/_navbar.scss */
 nav ul {
   margin: 0;
 }
-/* line 138, ../sass/components/_navbar.scss */
+/* line 143, ../sass/components/_navbar.scss */
 nav ul li {
   transition: background-color .3s;
   float: left;
   padding: 0;
 }
-/* line 143, ../sass/components/_navbar.scss */
+/* line 148, ../sass/components/_navbar.scss */
 nav ul li.active {
   background-color: rgba(0, 0, 0, 0.1);
 }
-/* line 147, ../sass/components/_navbar.scss */
+/* line 152, ../sass/components/_navbar.scss */
 nav ul a {
   transition: background-color .3s;
   font-size: 1.3rem;
@@ -5194,85 +5204,85 @@ nav ul a {
   cursor: pointer;
   line-height: 50px;
 }
-/* line 157, ../sass/components/_navbar.scss */
+/* line 162, ../sass/components/_navbar.scss */
 nav ul a.btn, nav ul a.btn-large, nav ul a.btn-small, nav ul a.btn-large, nav ul a.btn-flat, nav ul a.btn-floating {
   margin-top: -2px;
   margin-left: 15px;
   margin-right: 15px;
 }
-/* line 162, ../sass/components/_navbar.scss */
+/* line 167, ../sass/components/_navbar.scss */
 nav ul a.btn > .material-icons, nav ul a.btn-large > .material-icons, nav ul a.btn-small > .material-icons, nav ul a.btn-large > .material-icons, nav ul a.btn-flat > .material-icons, nav ul a.btn-floating > .material-icons {
   height: inherit;
   line-height: inherit;
 }
-/* line 168, ../sass/components/_navbar.scss */
+/* line 173, ../sass/components/_navbar.scss */
 nav ul a:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
-/* line 173, ../sass/components/_navbar.scss */
+/* line 178, ../sass/components/_navbar.scss */
 nav ul.left {
   float: left;
 }
-/* line 179, ../sass/components/_navbar.scss */
+/* line 184, ../sass/components/_navbar.scss */
 nav form {
   height: 100%;
 }
-/* line 183, ../sass/components/_navbar.scss */
+/* line 188, ../sass/components/_navbar.scss */
 nav .input-field {
   margin: 0;
   height: 100%;
 }
-/* line 187, ../sass/components/_navbar.scss */
+/* line 192, ../sass/components/_navbar.scss */
 nav .input-field input {
   height: 100%;
   font-size: 1.2rem;
   border: none;
   padding-left: 2rem;
 }
-/* line 193, ../sass/components/_navbar.scss */
+/* line 198, ../sass/components/_navbar.scss */
 nav .input-field input:focus, nav .input-field input[type=text]:valid, nav .input-field input[type=password]:valid, nav .input-field input[type=email]:valid, nav .input-field input[type=url]:valid, nav .input-field input[type=date]:valid {
   border: none;
   box-shadow: none;
 }
-/* line 200, ../sass/components/_navbar.scss */
+/* line 205, ../sass/components/_navbar.scss */
 nav .input-field label {
   top: 0;
   left: 0;
 }
-/* line 204, ../sass/components/_navbar.scss */
+/* line 209, ../sass/components/_navbar.scss */
 nav .input-field label i {
   color: rgba(255, 255, 255, 0.7);
   transition: color .3s;
 }
-/* line 208, ../sass/components/_navbar.scss */
+/* line 213, ../sass/components/_navbar.scss */
 nav .input-field label.active i {
   color: #fff;
 }
 
-/* line 214, ../sass/components/_navbar.scss */
+/* line 219, ../sass/components/_navbar.scss */
 .navbar-fixed {
   position: relative;
   height: 56px;
   z-index: 997;
 }
-/* line 219, ../sass/components/_navbar.scss */
+/* line 224, ../sass/components/_navbar.scss */
 .navbar-fixed nav {
   position: fixed;
 }
 
 @media only screen and (min-width: 601px) {
-  /* line 224, ../sass/components/_navbar.scss */
+  /* line 229, ../sass/components/_navbar.scss */
   nav.nav-extended .nav-wrapper {
     min-height: 50px;
   }
 
-  /* line 227, ../sass/components/_navbar.scss */
+  /* line 232, ../sass/components/_navbar.scss */
   nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
     height: 50px;
     line-height: 50px;
   }
 
-  /* line 231, ../sass/components/_navbar.scss */
+  /* line 236, ../sass/components/_navbar.scss */
   .navbar-fixed {
     height: 50px;
   }
@@ -5823,7 +5833,7 @@ small {
   height: 48px;
   width: 100%;
   background-color: #fff;
-  margin: 0 auto;
+  margin: 0 auto 10px;
   white-space: nowrap;
 }
 /* line 2, ../sass/components/_tabs.scss */
@@ -5861,36 +5871,38 @@ small {
   height: 48px;
   padding: 0;
   margin: 0;
-  text-transform: uppercase;
 }
-/* line 47, ../sass/components/_tabs.scss */
+/* line 46, ../sass/components/_tabs.scss */
 .tabs .tab a {
-  color: rgba(238, 80, 82, 0.7);
+  color: #E73A3C;
   display: block;
   width: 100%;
   height: 100%;
   padding: 0 24px;
-  font-size: 14px;
+  font-size: 18px;
+  font-weight: bold;
   text-overflow: ellipsis;
   overflow: hidden;
   transition: color .28s ease, background-color .28s ease;
+  font-family: 'Rancho', cursive;
 }
-/* line 48, ../sass/components/_tabs.scss */
+/* line 47, ../sass/components/_tabs.scss */
 .tabs .tab a:focus, .tabs .tab a:focus.active {
-  background-color: rgba(255, 179, 186, 0.2);
+  background-color: #E73A3C;
+  color: #fff;
   outline: none;
 }
 /* line 54, ../sass/components/_tabs.scss */
 .tabs .tab a:hover, .tabs .tab a.active {
-  background-color: transparent;
-  color: #EE5052;
+  background-color: #E73A3C;
+  color: #fff;
 }
-/* line 71, ../sass/components/_tabs.scss */
+/* line 73, ../sass/components/_tabs.scss */
 .tabs .tab.disabled a, .tabs .tab.disabled a:hover {
   color: rgba(238, 80, 82, 0.4);
   cursor: default;
 }
-/* line 77, ../sass/components/_tabs.scss */
+/* line 79, ../sass/components/_tabs.scss */
 .tabs .indicator {
   position: absolute;
   bottom: 0;
@@ -5900,17 +5912,17 @@ small {
 }
 
 @media only screen and (max-width: 992px) {
-  /* line 88, ../sass/components/_tabs.scss */
+  /* line 90, ../sass/components/_tabs.scss */
   .tabs {
     display: flex;
   }
-  /* line 91, ../sass/components/_tabs.scss */
+  /* line 93, ../sass/components/_tabs.scss */
   .tabs .tab {
     flex-grow: 1;
   }
-  /* line 94, ../sass/components/_tabs.scss */
+  /* line 96, ../sass/components/_tabs.scss */
   .tabs .tab a {
-    padding: 0 12px;
+    padding: 0 5px;
   }
 }
 /* line 1, ../sass/components/_tooltip.scss */
@@ -6039,7 +6051,7 @@ small {
 /* line 62, ../sass/components/_buttons.scss */
 .btn:focus, .btn-large:focus, .btn-small:focus,
 .btn-floating:focus {
-  background-color: #1c7d74;
+  background-color: #E73A3C;
 }
 
 /* line 68, ../sass/components/_buttons.scss */
@@ -6645,39 +6657,54 @@ button.btn-floating {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   line-height: 1.5;
-  padding: 1rem;
+  padding: 10px;
   background-color: #fff;
   border-bottom: 1px solid #ddd;
 }
 /* line 18, ../sass/components/_collapsible.scss */
+.collapsible-header.active .icon-open {
+  display: none;
+}
+/* line 19, ../sass/components/_collapsible.scss */
+.collapsible-header.active .icon-close {
+  display: block !important;
+}
+/* line 21, ../sass/components/_collapsible.scss */
 .collapsible-header i {
   width: 2rem;
   font-size: 1.6rem;
   display: inline-block;
   text-align: center;
-  margin-right: 1rem;
 }
 
-/* line 27, ../sass/components/_collapsible.scss */
+/* line 29, ../sass/components/_collapsible.scss */
 .collapsible-body {
   display: none;
   border-bottom: 1px solid #ddd;
   box-sizing: border-box;
-  padding: 2rem;
+  padding: 10px;
+}
+/* line 34, ../sass/components/_collapsible.scss */
+.collapsible-body ul.list-variedades {
+  padding-left: 30px;
+}
+/* line 36, ../sass/components/_collapsible.scss */
+.collapsible-body ul.list-variedades li {
+  list-style: circle;
 }
 
-/* line 38, ../sass/components/_collapsible.scss */
+/* line 46, ../sass/components/_collapsible.scss */
 .sidenav .collapsible,
 .sidenav.fixed .collapsible {
   border: none;
   box-shadow: none;
 }
-/* line 42, ../sass/components/_collapsible.scss */
+/* line 50, ../sass/components/_collapsible.scss */
 .sidenav .collapsible li,
 .sidenav.fixed .collapsible li {
   padding: 0;
 }
-/* line 45, ../sass/components/_collapsible.scss */
+/* line 53, ../sass/components/_collapsible.scss */
 .sidenav .collapsible-header,
 .sidenav.fixed .collapsible-header {
   background-color: transparent;
@@ -6686,40 +6713,40 @@ button.btn-floating {
   height: inherit;
   padding: 0 16px;
 }
-/* line 52, ../sass/components/_collapsible.scss */
+/* line 60, ../sass/components/_collapsible.scss */
 .sidenav .collapsible-header:hover,
 .sidenav.fixed .collapsible-header:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
-/* line 53, ../sass/components/_collapsible.scss */
+/* line 61, ../sass/components/_collapsible.scss */
 .sidenav .collapsible-header i,
 .sidenav.fixed .collapsible-header i {
   line-height: inherit;
 }
-/* line 56, ../sass/components/_collapsible.scss */
+/* line 64, ../sass/components/_collapsible.scss */
 .sidenav .collapsible-body,
 .sidenav.fixed .collapsible-body {
   border: 0;
   background-color: #fff;
 }
-/* line 60, ../sass/components/_collapsible.scss */
+/* line 68, ../sass/components/_collapsible.scss */
 .sidenav .collapsible-body li a,
 .sidenav.fixed .collapsible-body li a {
   padding: 0 23.5px 0 31px;
 }
 
-/* line 70, ../sass/components/_collapsible.scss */
+/* line 78, ../sass/components/_collapsible.scss */
 .collapsible.popout {
   border: none;
   box-shadow: none;
 }
-/* line 73, ../sass/components/_collapsible.scss */
+/* line 81, ../sass/components/_collapsible.scss */
 .collapsible.popout > li {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   margin: 0 24px;
   transition: margin 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-/* line 79, ../sass/components/_collapsible.scss */
+/* line 87, ../sass/components/_collapsible.scss */
 .collapsible.popout > li.active {
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
   margin: 16px 0;
@@ -6866,6 +6893,16 @@ button.btn-floating {
   height: 50px;
   z-index: 1000;
   -webkit-font-smoothing: antialiased;
+}
+
+/* line 52, ../sass/components/_materialbox.scss */
+#gallery-single .material-placeholder {
+  width: 31%;
+  display: inline-block;
+  vertical-align: bottom;
+  padding-right: 1%;
+  box-sizing: border-box;
+  margin-bottom: 1%;
 }
 
 /* line 2, ../sass/components/forms/_forms.scss */
@@ -10234,73 +10271,91 @@ footer a:hover {
   .no-padding-top-s-and-down {
     padding-top: 0px !important;
   }
+
+  /* line 94, ../sass/components/_utilities.scss */
+  .padding-top-bottom-large {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+  }
+
+  /* line 95, ../sass/components/_utilities.scss */
+  section.padding-top-bottom-xlarge {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+
+  /* line 97, ../sass/components/_utilities.scss */
+  .padding-right-left {
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+  }
 }
-/* line 96, ../sass/components/_utilities.scss */
+/* line 101, ../sass/components/_utilities.scss */
 .width-100p {
   width: 100% !important;
 }
 
-/* line 99, ../sass/components/_utilities.scss */
+/* line 104, ../sass/components/_utilities.scss */
 .absolute {
   position: absolute;
 }
 
-/* line 100, ../sass/components/_utilities.scss */
+/* line 105, ../sass/components/_utilities.scss */
 .relative {
   position: relative;
 }
 
-/* line 102, ../sass/components/_utilities.scss */
+/* line 107, ../sass/components/_utilities.scss */
 .right-0 {
   right: 0;
 }
 
-/* line 103, ../sass/components/_utilities.scss */
+/* line 108, ../sass/components/_utilities.scss */
 .left-0 {
   left: 0;
 }
 
-/* line 104, ../sass/components/_utilities.scss */
+/* line 109, ../sass/components/_utilities.scss */
 .top-0 {
   top: 0;
 }
 
-/* line 105, ../sass/components/_utilities.scss */
+/* line 110, ../sass/components/_utilities.scss */
 .bottom-0 {
   bottom: 0;
 }
 
-/* line 108, ../sass/components/_utilities.scss */
+/* line 113, ../sass/components/_utilities.scss */
 .block {
   display: block;
 }
 
-/* line 109, ../sass/components/_utilities.scss */
+/* line 114, ../sass/components/_utilities.scss */
 .inline-block {
   display: inline-block;
 }
 
-/* line 112, ../sass/components/_utilities.scss */
+/* line 117, ../sass/components/_utilities.scss */
 .text-center {
   text-align: center;
 }
 
-/* line 113, ../sass/components/_utilities.scss */
+/* line 118, ../sass/components/_utilities.scss */
 .text-left {
   text-align: left;
 }
 
-/* line 114, ../sass/components/_utilities.scss */
+/* line 119, ../sass/components/_utilities.scss */
 .text-right {
   text-align: right;
 }
 
-/* line 116, ../sass/components/_utilities.scss */
+/* line 121, ../sass/components/_utilities.scss */
 .align-middle {
   vertical-align: middle;
 }
 
-/* line 123, ../sass/components/_utilities.scss */
+/* line 128, ../sass/components/_utilities.scss */
 hr.line-difumined-small {
   border: 0;
   height: 1px;
@@ -10308,7 +10363,7 @@ hr.line-difumined-small {
   background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
 
-/* line 129, ../sass/components/_utilities.scss */
+/* line 134, ../sass/components/_utilities.scss */
 hr.line-difumined-to-rigth {
   border: 0;
   height: 1px;
@@ -10316,93 +10371,168 @@ hr.line-difumined-to-rigth {
   background-image: linear-gradient(to right, black, rgba(0, 0, 0, 0.75), transparent);
 }
 @media only screen and (max-width: 600px) {
-  /* line 129, ../sass/components/_utilities.scss */
+  /* line 134, ../sass/components/_utilities.scss */
   hr.line-difumined-to-rigth {
     background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.75), transparent);
   }
 }
 
 /* Single */
-/* line 141, ../sass/components/_utilities.scss */
+/* line 146, ../sass/components/_utilities.scss */
 #info-pack {
   border: 2px solid #EE5052;
   border-radius: 5px;
   padding: 20px 20px 50px;
   text-align: center;
   position: relative;
+  -webkit-transition: all .1s ease;
+  -moz-transition: all .1s ease;
+  -o-transition: all .1s ease;
+  transition: all .1s ease;
 }
-/* line 148, ../sass/components/_utilities.scss */
+/* line 157, ../sass/components/_utilities.scss */
 #info-pack a:not(.btn):not(.btn-large):not(.btn-small) {
   color: #EE5052;
 }
-/* line 150, ../sass/components/_utilities.scss */
+/* line 159, ../sass/components/_utilities.scss */
 #info-pack a:not(.btn):not(.btn-large):not(.btn-small):hover {
   text-decoration: underline;
 }
-/* line 154, ../sass/components/_utilities.scss */
+/* line 163, ../sass/components/_utilities.scss */
 #info-pack img {
   position: absolute;
   transform: translateX(-50%);
 }
+@media only screen and (min-width: 601px) {
+  /* line 168, ../sass/components/_utilities.scss */
+  #info-pack.box-fixed {
+    position: fixed;
+    top: 50px;
+  }
+  /* line 173, ../sass/components/_utilities.scss */
+  #info-pack.box-fixed-bottom {
+    position: absolute;
+    bottom: 65px;
+    top: inherit;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* line 146, ../sass/components/_utilities.scss */
+  #info-pack {
+    padding: 5px 5px 50px;
+    margin-bottom: 60px;
+  }
+}
 
-/* line 162, ../sass/components/_utilities.scss */
+/* line 187, ../sass/components/_utilities.scss */
 #mexico-map #otros {
   fill: #eee;
 }
-/* line 165, ../sass/components/_utilities.scss */
+/* line 190, ../sass/components/_utilities.scss */
 #mexico-map g {
   cursor: pointer;
   fill: #CBC5C5;
 }
-/* line 168, ../sass/components/_utilities.scss */
+/* line 193, ../sass/components/_utilities.scss */
 #mexico-map g.bajo {
   fill: #82D5FC;
 }
-/* line 169, ../sass/components/_utilities.scss */
+/* line 194, ../sass/components/_utilities.scss */
 #mexico-map g.medio {
   fill: #C58ADE;
 }
-/* line 170, ../sass/components/_utilities.scss */
+/* line 195, ../sass/components/_utilities.scss */
 #mexico-map g.alto {
   fill: #4A5374;
 }
-/* line 171, ../sass/components/_utilities.scss */
+/* line 196, ../sass/components/_utilities.scss */
 #mexico-map g.cotizar {
   fill: #CBC5C5;
 }
-/* line 172, ../sass/components/_utilities.scss */
+/* line 197, ../sass/components/_utilities.scss */
 #mexico-map g.active {
   opacity: 0.8;
 }
 
-/* line 179, ../sass/components/_utilities.scss */
+/* line 204, ../sass/components/_utilities.scss */
 .price-zone span.block-color-precio {
   display: inline-block;
   width: 30px;
   height: 30px;
 }
-/* line 183, ../sass/components/_utilities.scss */
+/* line 208, ../sass/components/_utilities.scss */
 .price-zone span.block-color-precio.bajo {
   background-color: #82D5FC;
 }
-/* line 184, ../sass/components/_utilities.scss */
+/* line 209, ../sass/components/_utilities.scss */
 .price-zone span.block-color-precio.medio {
   background-color: #C58ADE;
 }
-/* line 185, ../sass/components/_utilities.scss */
+/* line 210, ../sass/components/_utilities.scss */
 .price-zone span.block-color-precio.alto {
   background-color: #4A5374;
 }
-/* line 186, ../sass/components/_utilities.scss */
+/* line 211, ../sass/components/_utilities.scss */
 .price-zone span.block-color-precio.cotizar {
   background-color: #CBC5C5;
 }
 
-/* line 190, ../sass/components/_utilities.scss */
+/* line 215, ../sass/components/_utilities.scss */
 #provinceInfo {
   position: absolute;
   top: 0px;
   width: 100px;
+}
+
+/* line 221, ../sass/components/_utilities.scss */
+.box-testimonial {
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #fff;
+  position: relative;
+}
+@media only screen and (max-width: 600px) {
+  /* line 221, ../sass/components/_utilities.scss */
+  .box-testimonial {
+    margin-bottom: 40px;
+  }
+}
+/* line 230, ../sass/components/_utilities.scss */
+.box-testimonial img {
+  width: 100px;
+  position: absolute;
+  bottom: -30px;
+  left: -20px;
+}
+/* line 236, ../sass/components/_utilities.scss */
+.box-testimonial div p {
+  font-family: 'Rancho', cursive;
+}
+
+/* line 1, ../sass/components/_scrollbar.scss */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* line 5, ../sass/components/_scrollbar.scss */
+::-webkit-scrollbar-track {
+  background-color: #FFB3BA;
+}
+
+/* line 9, ../sass/components/_scrollbar.scss */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(238, 80, 82, 0.7);
+  border-radius: 10px;
+}
+
+/* line 14, ../sass/components/_scrollbar.scss */
+::-webkit-scrollbar-button {
+  background-color: rgba(238, 80, 82, 0.6);
+}
+
+/* line 18, ../sass/components/_scrollbar.scss */
+::-webkit-scrollbar-corner {
+  background-color: #FFB3BA;
 }
 
 /* ---- grid ---- */

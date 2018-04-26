@@ -47,3 +47,14 @@
   z-index: 1000;
   -webkit-font-smoothing: antialiased;
 }
+
+#gallery-single {
+  .material-placeholder {
+    width: 31%;
+    display: inline-block;
+    vertical-align: bottom;
+    padding-right: 1%;
+    box-sizing: border-box;
+    margin-bottom: 1%;
+  }
+}

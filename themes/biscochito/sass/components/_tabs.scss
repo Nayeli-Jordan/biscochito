@@ -32,7 +32,7 @@
   height: 48px;
   width: 100%;
   background-color: $tabs-bg-color;
-  margin: 0 auto;
+  margin: 0 auto 10px;
   white-space: nowrap;
 
   .tab {
@@ -42,30 +42,32 @@
     height: 48px;
     padding: 0;
     margin: 0;
-    text-transform: uppercase;
 
     a {
       &:focus,
       &:focus.active {
-        background-color: transparentize($tabs-underline-color, .8);
+        background-color: $primary-color-dark;
+        color: $light-color;
         outline: none;
       }
 
       &:hover,
       &.active {
-        background-color: transparent;
-        color: $tabs-text-color;
+        background-color: $primary-color-dark;
+        color: $light-color;
       }
 
-      color: rgba($tabs-text-color, .7);
+      color: $primary-color-dark;
       display: block;
       width: 100%;
       height: 100%;
       padding: 0 24px;
-      font-size: 14px;
+      font-size: 18px;
+      font-weight: bold;
       text-overflow: ellipsis;
       overflow: hidden;
-      transition: color .28s ease, background-color .28s ease;
+      transition: color .28s ease, background-color .28s ease;      
+      font-family: 'Rancho', cursive;
     }
 
     &.disabled a,
@@ -92,7 +94,7 @@
       flex-grow: 1;
 
       a {
-        padding: 0 12px;
+        padding: 0 5px;
       }
     }
   }

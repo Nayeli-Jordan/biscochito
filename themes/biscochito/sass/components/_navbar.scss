@@ -22,8 +22,8 @@ nav {
   color: $primary-color;
   background-color: $light-color;
   width: 100%;
-  height: $navbar-height-mobile;
-  line-height: $navbar-line-height-mobile;
+  height: 50px;
+  line-height: 50px;
 
   // Cuando el scroll es mayor a 50px
   &.nav-scroll {
@@ -51,8 +51,13 @@ nav {
   i.material-icons {
     display: block;
     font-size: 24px;
-    height: $navbar-height-mobile;
-    line-height: $navbar-line-height-mobile;
+    height: 50px;
+    line-height: 50px;
+    color: $light-color;
+    @media #{$small-and-down} {
+      height: 40px;
+      line-height: 40px;
+    }    
   }
 
   .nav-wrapper {

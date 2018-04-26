@@ -89,7 +89,12 @@
 .padding-right-left-xlarge 		{ padding-right: 40px!important; padding-left: 40px!important; }
 
 @media #{$small-and-down}{
-	.no-padding-top-s-and-down	{ padding-top: 0px!important; }
+	.no-padding-top-s-and-down			{ padding-top: 0px!important; }
+
+	.padding-top-bottom-large 			{ padding-top: 15px!important; padding-bottom: 15px!important; }
+	section.padding-top-bottom-xlarge 	{ padding-top: 30px!important; padding-bottom: 30px!important; }
+
+	.padding-right-left 				{ padding-right: 10px!important; padding-left: 10px!important; }
 }
 
 //size
@@ -144,6 +149,10 @@ hr.line-difumined-to-rigth {
 	padding: 20px 20px 50px;
 	text-align: center;
 	position: relative;
+	-webkit-transition: all .1s ease;
+	-moz-transition: all .1s ease;
+	-o-transition: all .1s ease;
+	transition: all .1s ease;
 	@extend .z-depth-1;
 	a:not(.btn) {
 		color: $primary-color;
@@ -154,6 +163,22 @@ hr.line-difumined-to-rigth {
 	img {
 		position: absolute;
 		transform: translateX(-50%);		
+	}
+	@media #{$medium-and-up}{
+		&.box-fixed {
+			position: fixed;
+			top: 50px;
+			
+		}
+		&.box-fixed-bottom {
+			position: absolute;
+			bottom: 65px;
+			top: inherit;
+		}			
+	}
+	@media #{$small-and-down}{
+		padding: 5px 5px 50px;
+		margin-bottom: 60px;
 	}
 }
 
@@ -191,4 +216,24 @@ hr.line-difumined-to-rigth {
 	position: absolute;
 	top: 0px;
 	width: 100px;
+}
+
+.box-testimonial {
+	padding: 15px;
+	border-radius: 10px;
+	background-color: $light-color;
+	position: relative; 
+ 	@extend .z-depth-1;
+	@media #{$small-and-down}{
+		margin-bottom: 40px;
+	}	
+	img {
+		width: 100px;
+		position: absolute;
+		bottom: -30px;
+		left: -20px;
+	}
+	div p {
+  		font-family: 'Rancho', cursive;
+	}
 }

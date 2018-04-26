@@ -46,6 +46,5 @@
 		?>
 			<p>Falta agregar zonas</p>	
 		<?php endif; ?>	
-	</svg>
-	<div id="provinceInfo"></div>
+		<div id="provinceInfo"></div>
 </article>

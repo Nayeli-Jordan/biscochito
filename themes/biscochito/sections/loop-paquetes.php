@@ -1,13 +1,8 @@
 <?php 
-	if ( is_front_page() ) :	
-		$items = '4';
-    else:
-    	$items = '-1';
-    endif;
 
 	$paquetes_args = array(
 		'post_type' => 'paquete',
-		'posts_per_page' => $items,
+		'posts_per_page' => '4',
 		'order'=> 'ASC'
 	);
 	$paquetes_query = new WP_Query( $paquetes_args );

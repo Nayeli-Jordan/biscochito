@@ -3,6 +3,7 @@
 	<div class="[ col s12 m4 offset-m2 ]">
 		<!-- map -->
 		<?php include (TEMPLATEPATH . '/sections/map-svg.php'); ?>	
+		
 	</div>
 	<div class="[ col s12 m4 ]">
 		<table class="price-zone">

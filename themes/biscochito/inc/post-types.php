@@ -5,38 +5,6 @@
 
 add_action('init', function(){
 
-	// variedad
-	$labels = array(
-		'name'          => 'Variedades',
-		'singular_name' => 'Variedades',
-		'add_new'       => 'Nueva variedad',
-		'add_new_item'  => 'Nueva variedad',
-		'edit_item'     => 'Editar variedad',
-		'new_item'      => 'Nueva variedad',
-		'all_items'     => 'Todo',
-		'view_item'     => 'Ver variedad',
-		'search_items'  => 'Buscar variedad',
-		'not_found'     => 'No hay variedades.',
-		'menu_name'     => 'Variedades'
-	);
-
-	$args = array(
-		'labels'             => $labels,
-		'public'             => true,
-		'publicly_queryable' => true,
-		'show_ui'            => true,
-		'show_in_menu'       => true,
-		'query_var'          => true,
-		'rewrite'            => array( 'slug' => 'variedad' ),
-		'capability_type'    => 'post',
-		'has_archive'        => true,
-		'hierarchical'       => false,
-		'menu_position'      => 6,
-		'supports'           => array( 'title' ),
-		'menu_icon' 		 => 'dashicons-clipboard'
-	);
-	register_post_type( 'variedad', $args );
-
 	// servicio
 	$labels = array(
 		'name'          => 'Servicio',
@@ -96,7 +64,7 @@ add_action('init', function(){
 		'has_archive'        => true,
 		'hierarchical'       => false,
 		'menu_position'      => 6,
-		'supports'           => array( 'title', 'thumbnail', 'editor' ),
+		'supports'           => array( 'title', 'thumbnail' ),
 		'taxonomies'         => array( 'opcion' ),
 		'menu_icon' 		 => 'dashicons-cart'
 	);
@@ -165,6 +133,38 @@ add_action('init', function(){
 		'menu_icon' 		 => 'dashicons-location-alt'
 	);
 	register_post_type( 'zona', $args );
+
+	// Testimonial
+	$labels = array(
+		'name'          => 'Testimonial',
+		'singular_name' => 'Testimonial',
+		'add_new'       => 'Nuevo testimonial',
+		'add_new_item'  => 'Nuevo testimonial',
+		'edit_item'     => 'Editar testimonial',
+		'new_item'      => 'Nuevo testimonial',
+		'all_items'     => 'Todo',
+		'view_item'     => 'Ver testimonial',
+		'search_items'  => 'Buscar testimonial',
+		'not_found'     => 'No hay testimoniales.',
+		'menu_name'     => 'Testimonial'
+	);
+
+	$args = array(
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'testimonial' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => 6,
+		'supports'           => array( 'title', 'editor' ),
+		'menu_icon' 		 => 'dashicons-smiley'
+	);
+	register_post_type( 'testimonial', $args );	
 
 
 });
